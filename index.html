@@ -175,7 +175,7 @@
 			 if (localStorage.getItem('theme') === 'dark') {
 			document.body.classList.add('dark');
 			 } else {
-			document.body.classList.remove('dark'); // Ensure light theme if stored 'light' or null
+			document.body.classList.remove('dark');
 			 }
 			
 			document.querySelector('.toggle-theme').addEventListener('click', () => {
@@ -184,14 +184,12 @@
 			});
 			
 			
-			  // Collapsibles (if any)
 			  document.querySelectorAll(".collapsible").forEach(header => {
 			    header.addEventListener("click", () => {
 			      header.classList.toggle("open");
 			    });
 			  });
 			
-			  // Back to top button (not present in index.html, so just check)
 			  const backToTop = document.getElementById("backToTop");
 			  if (backToTop) {
 			    window.addEventListener('scroll', () => {
@@ -203,7 +201,6 @@
 			    });
 			  }
 			
-			  // Search input and results
 			  const input = document.getElementById("searchInput");
 			  const results = document.getElementById("results");
 			
