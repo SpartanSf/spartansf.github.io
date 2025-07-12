@@ -1,1 +1,250 @@
-<h1>More coming soon</h1>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>NeetComputers Documentation</title>
+		<style>
+			:root {
+			--bg-light: #f9f9f9;
+			--bg-dark: #1e1e1e;
+			--text-light: #333;
+			--text-dark: #eee;
+			--accent: #4CAF50;
+			--link: #2196F3;
+			}
+			body {
+			margin: 0;
+			font-family: Arial, sans-serif;
+			background-color: var(--bg-light);
+			color: var(--text-light);
+			display: flex;
+			}
+			.dark {
+			background-color: var(--bg-dark);
+			color: var(--text-dark);
+			}
+			.topbar {
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			height: 60px;
+			background-color: white;
+			color: black;
+			border-bottom: 1px solid #ccc;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 0 1.5rem;
+			z-index: 1000;
+			}
+			.dark .topbar {
+			background-color: #2c2c2c;
+			color: white;
+			border-color: #444;
+			}
+			.logo-link {
+			display: flex;
+			align-items: center;
+			text-decoration: none;
+			color: inherit;
+			}
+			.logo {
+			height: 40px;
+			margin-right: 0.75rem;
+			}
+			.toggle-theme {
+			padding: 0.5rem 1rem;
+			background: var(--accent);
+			color: white;
+			border: none;
+			border-radius: 6px;
+			cursor: pointer;
+			font-weight: bold;
+			}
+			.sidebar {
+			width: 250px;
+			background: #2c3e50;
+			color: white;
+			padding: 1rem;
+			box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+			position: fixed;
+			top: 60px;
+			bottom: 0;
+			overflow-y: auto;
+			}
+			.sidebar h2 {
+			font-size: 1.2rem;
+			border-bottom: 2px solid var(--accent);
+			padding-bottom: 0.5rem;
+			}
+			.sidebar a {
+			color: #ecf0f1;
+			text-decoration: none;
+			display: block;
+			margin: 0.5rem 0;
+			}
+			.sidebar a:hover {
+			text-decoration: underline;
+			}
+			.main {
+			flex: 1;
+			margin-left: 250px;
+			padding: 2rem;
+			margin-top: 60px;
+			max-width: 800px;
+			width: 100%;
+			}
+			.search-container {
+			margin-left: 250px;
+			max-width: 800px;
+			margin-top: 60px;
+			padding: 2rem;
+			text-align: center;
+			}
+			#searchInput {
+			width: 100%;
+			padding: 0.75rem;
+			font-size: 1rem;
+			border: 1px solid #ccc;
+			border-radius: 6px;
+			}
+			.dark #searchInput {
+			background-color: #333;
+			color: white;
+			border-color: #555;
+			}
+			.results {
+			margin-top: 1.5rem;
+			text-align: left;
+			}
+			.result-item {
+			background: #eee;
+			padding: 0.75rem;
+			border-radius: 5px;
+			margin-bottom: 0.5rem;
+			}
+			.dark .result-item {
+			background: #444;
+			color: white;
+			}
+			a {
+			color: var(--link);
+			}
+			@media (max-width: 768px) {
+			.sidebar {
+			display: none;
+			}
+			.main {
+			margin-left: 0;
+			padding: 1rem;
+			margin-top: 100px;
+			}
+			.topbar {
+			flex-direction: column;
+			align-items: flex-start;
+			height: auto;
+			padding: 0.5rem 1rem;
+			}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="topbar">
+			<a href="index.html" class="logo-link">
+			<img src="assets/logo.png" alt="Logo" class="logo">
+			<span>NeetComputers Documentation</span>
+			</a>
+			<button class="toggle-theme">Toggle Theme</button>
+		</div>
+		<div class="sidebar">
+			<h2>Documentation</h2>
+			<a href="https://www.red-toast.net/NeetDocumentation/">View Red Toast's documentation</a>
+			<a href="docs/screen.html#basic">Screen API</a>
+		</div>
+		<div class="main">
+			<div class="search-container">
+				<h1>Welcome to NeetComputers Documentation</h1>
+				<input type="text" id="searchInput" placeholder="Search functions...">
+				<div class="results" id="results"></div>
+			</div>
+		</div>
+		<script>
+			window.addEventListener('DOMContentLoaded', () => {
+			 if (localStorage.getItem('theme') === 'dark') {
+			document.body.classList.add('dark');
+			 } else {
+			document.body.classList.remove('dark');
+			 }
+			
+			document.querySelector('.toggle-theme').addEventListener('click', () => {
+			 const isDark = document.body.classList.toggle('dark');
+			 localStorage.setItem('theme', isDark ? 'dark' : 'light');
+			});
+			
+			
+			  document.querySelectorAll(".collapsible").forEach(header => {
+			    header.addEventListener("click", () => {
+			      header.classList.toggle("open");
+			    });
+			  });
+			
+			  const backToTop = document.getElementById("backToTop");
+			  if (backToTop) {
+			    window.addEventListener('scroll', () => {
+			      backToTop.style.display = window.scrollY > 300 ? "block" : "none";
+			    });
+			
+			    backToTop.addEventListener("click", () => {
+			      window.scrollTo({ top: 0, behavior: 'smooth' });
+			    });
+			  }
+			
+			  const input = document.getElementById("searchInput");
+			  const results = document.getElementById("results");
+			
+			  const functions = [
+			    { name: "draw()", link: "docs/screen.html#basic" },
+			    { name: "getSize()", link: "docs/screen.html#basic" },
+			    { name: "setColor(R, G, B)", link: "docs/screen.html#color" },
+			    { name: "setColor(Alpha)", link: "docs/screen.html#color" },
+			    { name: "setColor(R, G, B, A)", link: "docs/screen.html#color" },
+			    { name: "setRotation(Angle, X, Y)", link: "docs/screen.html#rotation" },
+			    { name: "setRotation(Angle)", link: "docs/screen.html#rotation" },
+			    { name: "setRotation()", link: "docs/screen.html#rotation" },
+			    { name: "drawPixel(X, Y)", link: "docs/screen.html#simple" },
+			    { name: "drawLine(x1, y1, x2, y2)", link: "docs/screen.html#simple" },
+			    { name: "fill(x1, y1, x2, y2)", link: "docs/screen.html#simple" },
+			    { name: "fill(R, G, B)", link: "docs/screen.html#simple" },
+			    { name: "floodFill(X, Y, R, G, B)", link: "docs/screen.html#simple" },
+			    { name: "floodFill(X, Y, Tolerance, R, G, B)", link: "docs/screen.html#simple" },
+			    { name: "drawRectangle(x1, y1, x2, y2)", link: "docs/screen.html#complex" },
+			    { name: "drawCircle(x1, y1, x2, y2)", link: "docs/screen.html#complex" },
+			    { name: "drawCircle(X, Y, Radius)", link: "docs/screen.html#complex" },
+			    { name: "drawPolygon(X, Y, n, Radius)", link: "docs/screen.html#complex" },
+			    { name: "toRadius(n, Apothem)", link: "docs/screen.html#complex" },
+			    { name: "drawBezier(x1, y1, x2, y2, x3, y3)", link: "docs/screen.html#complex" },
+			    { name: "drawSpline(Xs, Ys)", link: "docs/screen.html#complex" },
+			    { name: "drawSpline(Coordinates)", link: "docs/screen.html#complex" }
+			  ];
+			
+			  if (input && results) {
+			    input.addEventListener("input", function () {
+			      const query = this.value.toLowerCase();
+			      results.innerHTML = "";
+			      if (query.length === 0) return;
+			
+			      const filtered = functions.filter(f => f.name.toLowerCase().includes(query));
+			      for (const func of filtered) {
+			        const div = document.createElement("div");
+			        div.className = "result-item";
+			        div.innerHTML = `<a href="${func.link}">${func.name}</a>`;
+			        results.appendChild(div);
+			      }
+			    });
+			  }
+			});
+		</script>
+	</body>
+</html>
