@@ -250,8 +250,8 @@
       <p>
         Returns the width and height of the screen in pixels.
         <br><strong>Parameters:</strong> None  
-        <br><strong>Returns:</strong> <code>(int, int)</code> – (width, height)
-        <br><strong>Example:</strong> <code>let [w, h] = getSize();</code>
+        <br><strong>Returns:</strong> <code>int, int</code> – width, height
+        <br><strong>Example:</strong> <code>local w, h = getSize()</code>
       </p>
     </div>
 
@@ -277,7 +277,7 @@
         Sets the global transparency level.
       </p>
       <strong>Parameters:</strong> 
-      <ul><li><code>Alpha</code>: int (1–256)</li></ul>
+      <ul><li><code>Alpha</code>: int 1–256</li></ul>
       <strong>Returns:</strong> void
     </div>
 
@@ -291,7 +291,7 @@
         <li><code>R</code>: int</li>
         <li><code>G</code>: int</li>
         <li><code>B</code>: int</li>
-        <li><code>A</code>: int (1–256)</li>
+        <li><code>A</code>: int 1–256</li>
       </ul>
       <strong>Returns:</strong> void
     </div>
@@ -310,7 +310,7 @@
         <li><code>Y</code>: int</li>
       </ul>
       <strong>Returns:</strong> void
-      <br><strong>Example:</strong> <code>setRotation(45, 100, 100);</code>
+      <br><strong>Example:</strong> <code>setRotation(45, 100, 100)</code>
     </div>
 
     <h3 id="setrotation-next" class="collapsible">setRotation(Angle)</h3>
@@ -345,13 +345,13 @@
         <li><code>Y</code>: int</li>
       </ul>
       <strong>Returns:</strong> void
-      <br><strong>Example:</strong> <code>drawPixel(100, 50);</code>
+      <br><strong>Example:</strong> <code>drawPixel(100, 50)</code>
     </div>
 
     <h3 id="drawline" class="collapsible">drawLine(x1, y1, x2, y2)</h3>
     <div class="doc-content">
       <p>
-        Draws a straight line from <code>(x1, y1)</code> to <code>(x2, y2)</code>.
+        Draws a straight line from <code>x1, y1</code> to <code>x2, y2</code>.
       </p>
       <strong>Parameters:</strong>
       <ul>
@@ -361,7 +361,7 @@
         <li><code>y2</code>: int – End Y</li>
       </ul>
       <strong>Returns:</strong> void
-      <br><strong>Example:</strong> <code>drawLine(10, 10, 200, 200);</code>
+      <br><strong>Example:</strong> <code>drawLine(10, 10, 200, 200)</code>
     </div>
 
     <h3 id="fill-rect" class="collapsible">fill(x1, y1, x2, y2)</h3>
@@ -377,7 +377,7 @@
         <li><code>y2</code>: int</li>
       </ul>
       <strong>Returns:</strong> void
-      <br><strong>Example:</strong> <code>fill(50, 50, 150, 100);</code>
+      <br><strong>Example:</strong> <code>fill(50, 50, 150, 100)</code>
     </div>
 
     <h3 id="fill-screen" class="collapsible">fill(R, G, B)</h3>
@@ -387,29 +387,29 @@
       </p>
       <strong>Parameters:</strong>
       <ul>
-        <li><code>R</code>: int (0–255)</li>
-        <li><code>G</code>: int (0–255)</li>
-        <li><code>B</code>: int (0–255)</li>
+        <li><code>R</code>: int 0–255</li>
+        <li><code>G</code>: int 0–255</li>
+        <li><code>B</code>: int 0–255</li>
       </ul>
       <strong>Returns:</strong> void
-      <br><strong>Example:</strong> <code>fill(0, 0, 0);</code>
+      <br><strong>Example:</strong> <code>fill(0, 0, 0)</code>
     </div>
 
     <h3 id="floodfill-strict" class="collapsible">floodFill(X, Y, R, G, B)</h3>
     <div class="doc-content">
       <p>
-        Performs a strict flood fill starting at <code>(X, Y)</code>. Only replaces pixels matching the starting color exactly.
+        Performs a strict flood fill starting at <code>X, Y</code>. Only replaces pixels matching the starting color exactly.
       </p>
       <strong>Parameters:</strong>
       <ul>
         <li><code>X</code>: int</li>
         <li><code>Y</code>: int</li>
-        <li><code>R</code>: int (0–255)</li>
-        <li><code>G</code>: int (0–255)</li>
-        <li><code>B</code>: int (0–255)</li>
+        <li><code>R</code>: int 0–255</li>
+        <li><code>G</code>: int 0–255</li>
+        <li><code>B</code>: int 0–255</li>
       </ul>
       <strong>Returns:</strong> void
-      <br><strong>Example:</strong> <code>floodFill(100, 100, 255, 0, 0);</code>
+      <br><strong>Example:</strong> <code>floodFill(100, 100, 255, 0, 0)</code>
     </div>
 
     <h3 id="floodfill-tolerance" class="collapsible">floodFill(X, Y, Tolerance, R, G, B)</h3>
@@ -421,13 +421,13 @@
       <ul>
         <li><code>X</code>: int</li>
         <li><code>Y</code>: int</li>
-        <li><code>Tolerance</code>: int (0–255)</li>
-        <li><code>R</code>: int (0–255)</li>
-        <li><code>G</code>: int (0–255)</li>
-        <li><code>B</code>: int (0–255)</li>
+        <li><code>Tolerance</code>: int 0–255</li>
+        <li><code>R</code>: int 0–255</li>
+        <li><code>G</code>: int 0–255</li>
+        <li><code>B</code>: int 0–255</li>
       </ul>
       <strong>Returns:</strong> void
-      <br><strong>Example:</strong> <code>floodFill(100, 100, 10, 0, 255, 0);</code>
+      <br><strong>Example:</strong> <code>floodFill(100, 100, 10, 0, 255, 0)</code>
     </div>
 
     <h2 id="complex">Complex Drawing</h2>
@@ -435,7 +435,7 @@
     <h3 id="drawpolygon" class="collapsible">drawPolygon(X, Y, n, Radius)</h3>
     <div class="doc-content">
       <p>
-        Draws a regular polygon centered at <code>(X, Y)</code>.
+        Draws a regular polygon centered at <code>X, Y</code>.
       </p>
       <strong>Parameters:</strong>
       <ul>
@@ -445,7 +445,7 @@
         <li><code>Radius</code>: float – Distance from center to a vertex</li>
       </ul>
       <strong>Returns:</strong> void
-      <br><strong>Example:</strong> <code>drawPolygon(150, 150, 6, 40);</code>
+      <br><strong>Example:</strong> <code>drawPolygon(150, 150, 6, 40)</code>
     </div>
 
     <h3 id="toradius" class="collapsible">toRadius(n, Apothem)</h3>
@@ -459,7 +459,7 @@
         <li><code>Apothem</code>: float</li>
       </ul>
       <strong>Returns:</strong> float – Calculated radius
-      <br><strong>Example:</strong> <code>let r = toRadius(6, 50);</code>
+      <br><strong>Example:</strong> <code>local r = toRadius(6, 50)</code>
     </div>
 
     <h3 id="drawbezier" class="collapsible">drawBezier(x1, y1, x2, y2, x3, y3)</h3>
@@ -474,7 +474,7 @@
         <li><code>x3, y3</code>: int – End point</li>
       </ul>
       <strong>Returns:</strong> void
-      <br><strong>Example:</strong> <code>drawBezier(10, 100, 60, 20, 110, 100);</code>
+      <br><strong>Example:</strong> <code>drawBezier(10, 100, 60, 20, 110, 100)</code>
     </div>
 
     <h3 id="drawspline-list" class="collapsible">drawSpline(Xs, Ys)</h3>
@@ -488,7 +488,7 @@
         <li><code>Ys</code>: array of int – Y coordinates</li>
       </ul>
       <strong>Returns:</strong> void
-      <br><strong>Example:</strong> <code>drawSpline({10, 30, 60}, {90, 20, 90});</code>
+      <br><strong>Example:</strong> <code>drawSpline({10, 30, 60}, {90, 20, 90})</code>
     </div>
 
     <h3 id="drawspline-flat" class="collapsible">drawSpline(Coordinates)</h3>
@@ -497,9 +497,9 @@
         Draws a spline from interleaved coordinate array.
       </p>
       <strong>Parameters:</strong>
-      <ul><li><code>Coordinates</code>: array of int – [x1, y1, x2, y2, ...]</li></ul>
+      <ul><li><code>Coordinates</code>: array of int – {x1, y1, x2, y2, ...}</li></ul>
       <strong>Returns:</strong> void
-      <br><strong>Example:</strong> <code>drawSpline([10, 90, 30, 20, 60, 90]);</code>
+      <br><strong>Example:</strong> <code>drawSpline({10, 90, 30, 20, 60, 90});</code>
     </div>
   </div>
 
